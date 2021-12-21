@@ -1,0 +1,57 @@
+CREATE TABLE aluno_teste (
+	id SERIAL,
+	nome VARCHAR(255),
+	cpf CHAR(11),
+	observacao TEXT,
+	idade INTEGER,
+	dinheiro NUMERIC(10,2),
+	altura real,
+	ativo BOOLEAN,
+	data_nascimento DATE,
+	hora_aula TIME,
+	matriculado_em timestamp
+	
+);
+
+SELECT * FROM aluno_teste;
+
+INSERT INTO aluno_teste (
+    nome,
+    cpf, 
+	observacao, 
+	idade, dinheiro, 
+	altura, 
+	ativo, 
+	data_nascimento, 
+	hora_aula,
+	matriculado_em
+)
+VALUES (
+    'Otavio',
+    '38880523864',
+	'otavio exemplar',
+	35, 
+	100.50, 
+	1.70, 
+	TRUE, 
+	'1990-10-10', 
+	'06:14:00',
+	'2021-12-21 06:41:15'
+)
+
+SELECT *
+FROM aluno_teste
+WHERE id = 1	
+
+UPDATE aluno_teste
+SET   nome = 'Paulo',  
+  cpf = '39660292864', 
+  observacao = 'pior aluno', 
+  idade = 28, 
+  dinheiro = 15.23,
+  altura = 1.71, 
+  ativo = FALSE, 
+  data_nascimento = '1993-01-27',
+  hora_aula = '07:49:05',
+  matriculado_em = '2021-12-22 08:01:15'
+WHERE id = 1
